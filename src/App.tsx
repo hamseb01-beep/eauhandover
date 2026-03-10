@@ -122,8 +122,8 @@ export default function App() {
       // Google Apps Script POST requires specific handling for CORS redirects
       const response = await fetch(GAS_URL, {
         method: 'POST',
-        mode: 'no-cors', // POST to GAS often requires no-cors or handling redirects
-        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' }, // Use text/plain to avoid preflight
         body: JSON.stringify(currentShift)
       });
       
